@@ -1,7 +1,7 @@
 <?php
 $hostname     = "localhost:3306"; // Enter Your Host Name
-$username     = "momo_48";      // Enter Your Table username
-$password     = "S!bou154";          // Enter Your Table Password
+$username     = "root";      // Enter Your Table username
+$password     = "";          // Enter Your Table Password
 $databasename = "justice1"; // Enter Your database Name
 
 

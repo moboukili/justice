@@ -13,8 +13,8 @@ include_once 'config/database.php';
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>لوحة القيادة من العدل</title>
-<link rel="shortcut icon" href="assets/car.ico" />
-<link rel="stylesheet" href="style.css">
+<link rel="shortcut icon" href="assets/images/car.ico" />
+<link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
@@ -23,47 +23,20 @@ include_once 'config/database.php';
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<style>
-
-.success {
-    background-color: #ddffdd;
-    border-right: 6px solid #4CAF50; 
-}
-	input[type="radio"] {
-    display:inline-block;
-    width:19px;
-    height:19px;
-    margin:-1px 4px 0 0;
-    vertical-align:middle;
-    background:url(http://webdesigntutsplus.s3.amazonaws.com/tuts/391_checkboxes/check_radio_sheet.png) -38px top no-repeat;
-    cursor:pointer;
-}
-
-input[type="radio"] + label {
-    font-size:14px;
-	margin-right: 35px;
-}
-
-
-input[type="radio"]:checked {
-    background:url(http://webdesigntutsplus.s3.amazonaws.com/tuts/391_checkboxes/check_radio_sheet.png) -57px top no-repeat;
-}
-</style> 
 
 </head>
 <body>
 <header>
     <div class="row">
         <div class="col">
-          <div class="text-centers" style="background-image: url('assets/banner.jpeg');"></div>
+          <div class="text-centers" style="background-image: url('assets/images/banner.jpeg');"></div>
         </div>
       </div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
-          <img src="assets/1.jpg" width="30" height="30" alt="" style="margin-left: 15px;">
+          <img src="assets/images/1.jpg" width="30" height="30" alt="" style="margin-left: 15px;">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -150,7 +123,7 @@ input[type="radio"]:checked {
 
 														?>
 															<script type="text/javascript">
-															window.location.href = 'https://oujda.xyz/dash_board.php';
+															window.location.href = 'dash_board.php';
 															</script>
 														<?php
 													} else{
@@ -196,11 +169,6 @@ input[type="radio"]:checked {
 			
 		</div>
 	</div> 
-			<div class="row">
-                <div class="copy-right">
-                    <p>Réalisé par : <a href="https://seomaniak.ma"  title="Seomaniak" target="_blank">Seomaniak.ma</a></p>
-                </div>
-            </div>
 </div>
 <!-- add Modal HTML -->
 <div id="addEmployeeModal" class="modal fade">
@@ -345,87 +313,15 @@ input[type="radio"]:checked {
 	</div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<script src="assets/js/index.js"></script>
 
-    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
-<script>
-        $(document).ready(function () {
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-            $('.deletebtn').on('click', function () {
+<script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
 
-                $('#deletemodal').modal('show');
-
-                $tr = $(this).closest('tr');
-
-                var data = $tr.children("td").map(function () {
-                    return $(this).text();
-                }).get();
-
-                console.log(data);
-
-                $('#delete_id').val(data[0]);
-
-            });
-        });
-    </script>
-
-    <script>
-        $(document).ready(function () {
-
-            $('.editbtn').on('click', function () {
-
-                $('#editmodal').modal('show');
-
-				
-                $tr = $(this).closest('tr');
-
-                var data = $tr.children("td").map(function () {
-                    return $(this).text();
-                }).get();
-                
-				console.log(data);
-				$('#update_id').val(data[0]);
-                $('#name').val(data[1]);
-                $('#numeo').val(data[2]);
-				$('input[name="sexe"]:checked').val(data[3]);
-				$('input[name="type"]:checked').val(data[4]);
-				$('#motif').val(data[5]);
-                $('#date_deb').val(data[6]);
-                $('#date_fin').val(data[7]);
-            });
-        });
-    </script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-    var t = $('#example').DataTable( {
-        "columnDefs": [ {
-            "searchable": false,
-            "orderable": false,
-            "targets": 0
-        } ],
-        "order": [[ 1, 'asc' ]]
-    } );
- 
-    t.on( 'order.dt search.dt', function () {
-        t.column(0, {search:'applied', order:'applied'}).each( function (cell, i) {
-            cell.innerHTML = i+1;
-        } );
-    } ).draw();
-} );
-showNotification();
-
-function showNotification() {
-  $(".success")
-    .fadeIn()
-    .css({ right: 150, position: "absolute" })
-    .animate( 5000, function(){
-		location.reload(1)
-});
-}
-</script>
     
 </body>
 </html>

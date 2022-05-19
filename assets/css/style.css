@@ -284,3 +284,26 @@ table.table .avatar {
     position: relative;
     top: 2px;
 }
+.success {
+    background-color: #ddffdd;
+    border-right: 6px solid #4CAF50; 
+}
+	input[type="radio"] {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    background:url(http://webdesigntutsplus.s3.amazonaws.com/tuts/391_checkboxes/check_radio_sheet.png) -38px top no-repeat;
+    cursor:pointer;
+}
+
+input[type="radio"] + label {
+    font-size:14px;
+	margin-right: 35px;
+}
+
+
+input[type="radio"]:checked {
+    background:url(http://webdesigntutsplus.s3.amazonaws.com/tuts/391_checkboxes/check_radio_sheet.png) -57px top no-repeat;
+}
